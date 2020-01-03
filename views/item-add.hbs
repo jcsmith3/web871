@@ -1,0 +1,71 @@
+<div class="container text-center m-auto" style="max-width:500px; max-height: 800px;">
+    <div class="accordion" id="accordionExample">
+
+        <div class="card card-body">
+            <h2 class="mb-0">
+                <button class="btn btn-primary btn-block show" type="button" data-toggle="collapse"
+                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    New Item
+                </button>
+            </h2>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+                <div class="container-sm mb-3">
+
+                    <form action="/items/add/{{poId}}" method="post">
+                        <div class="row">
+
+                            <div class="form-group col-10 m-auto pb-2">
+                                <label for="barCode">Barcode</label>
+                                <input name="barCode" type="string" class="form-control">
+                            </div>
+                            <div class="row ">
+                                <div class="form-group col-6">
+                                    <label for="skidNumber">Skid</label>
+                                    <input name="skidNumber" type="string" class="form-control">
+                                </div>
+                            
+                            <div class="form-group col-6">
+                                <label for="quantity">Quantity</label>
+                                <input name="quantity" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-block">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="card-content fixed-bottom">
+                <a href="/skids/{{poId}}/view"><button class="btn btn-outline-warning col-sm-12"
+                    style="height: 5rem;">Back</button></a>
+                <button type="button" class="btn btn-primary col-sm-12" style="height: 5rem;" data-toggle="modal"
+                    data-target=".bd-example-modal-sm">Add Skid
+                </button>
+            </div>
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-sm modal-dialog-centered">
+                    <div class="modal-content">
+
+                        <form action="/skids/{{poId}}/add" method="POST">
+                            <div class="form-group col">
+                                <label for="destination">Destination</label>
+                                <input name="destination" type="string" class="form-control " autofocus>
+                            </div>
+                            <div class="form-group col">
+                                <label for="skidNumber">Skid Id</label>
+                                <input name="skidNumber" type="text" class="form-control">
+                            </div>
+                            <button class="btn btn-outline-success">Add</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

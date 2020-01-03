@@ -1,0 +1,71 @@
+<div class="container text-center m-auto" style="max-width:500px; max-height: 800px;">
+    <div class="accordion" id="accordionExample">
+        <div class="card">
+
+            <h2 class="mb-0">
+                <button class="btn btn-primary btn-block collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Add PO
+                </button>
+            </h2>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+                <div class="container-sm mb-3">
+                    <form action="/po" method="post">
+                        <div class="row">
+
+                            <div class="form-group col">
+                                <label for="poNumber">Po number</label>
+                                <input name="poNumber" type="string" class="form-control">
+                            </div>
+                            <div class="form-group col">
+                                <label for="vendorId">Vendor Id</label>
+                                <input name="vendorId" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col">
+                                <label for="unloadCount">Unloaded Skid count</label>
+                                <input name="unloadCount" type="text" class="form-control">
+                            </div>
+                            <div class="form-group col">
+                                <label for="staged">Staged</label>
+                                <input name="staged" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-block">Submit</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        {{#each poList}}
+        <div class="container text-center pt-2 mt-5 m-auto">
+            <div class="card">
+                <a href="/skids/{{_id}}/view">
+                    <h2 class="mb-0">
+                        {{this.poNumber}}
+                    </h2>
+                    <div class="card-body">
+                        <div class="container-sm mb-3">
+
+                            <div class="row mb-3">
+                                <div class="col">{{vendorId}}</div>
+                                <div class="col">{{staged}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">{{lines}}</div>
+                                <div class="col">Pick: {{pickSkids}}</div>
+                                <div class="col">Bulk: {{bulkSkids}}</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

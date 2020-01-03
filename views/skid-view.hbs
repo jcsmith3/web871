@@ -1,0 +1,31 @@
+{{#each skidList}}
+<div class="container text-center pt-2 mt-5 m-auto" style="max-width:500px; max-height: 800px;">
+    <div class="card">
+        <a href="/items/{{../poId}}/{{_id}}/view">
+            <h2 class="mb-0">
+                {{skidNumber}}
+            </h2>
+            <div class="card-body">
+                <div class="container-sm mb-3">
+
+                    <div class="row mb-3">
+                        <div class="col">Destination: {{destination}}</div>
+                        <div class="col">Status: {{status}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">Lines: {{lines}}</div>
+                        <div class="col">{{skidType}}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+{{/each}}
+<div class="row">
+    <nav class="card-content mb-3 fixed-bottom ">
+        <a href="/po"><button class="btn btn-outline-secondary col-sm-12" style="height: 5rem;">Back</button></a>
+        <a href="/items/add/{{poId}}"><button class="btn btn-outline-success col-sm-12" style="height: 5rem;">Commit</button></a>
+    </nav>
+</div>
