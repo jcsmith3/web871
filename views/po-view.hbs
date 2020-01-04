@@ -11,6 +11,7 @@
 
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 
+
                 <div class="container-sm mb-3">
                     <form action="/po" method="post">
                         <div class="row">
@@ -39,9 +40,25 @@
 
                 </div>
             </div>
+
+            <div class="container card card-body">
+                <div class="col">
+                    {{>_search}}
+                    <div class="row mt-3">
+                        <form id='poFilter' action="#">
+                            <label for="poFilter">Po Filter</label>
+                            <input type="text" name="poFilter" placeholder="Po number">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </div>
         {{#each poList}}
-        <div class="container text-center pt-2 mt-5 m-auto">
+        <div class="container text-center pt-2 px-1 mt-5 m-auto">
             <div class="card">
                 <a href="/skids/{{_id}}/view">
                     <h2 class="mb-0">

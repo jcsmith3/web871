@@ -20,7 +20,7 @@ const createItem = async (req, res, next) => {
         await Promise.all([list, item.save()])
         next()
     } catch (error) {
-        console.log('Error')
+        res.status(404).send({error: 'Ooops'})
     }
 
 }
@@ -36,11 +36,28 @@ const loadAllItems = async (req, res, next) => {
         next()
     }
     catch (err) {
-        console.log({ error: 'line: 29 - item_controller'})
+        res.status(404).send({error: 'Something went wrong!'})
+    }
+}
+
+const itemSearch = async ( req, res, next ) => {
+
+    try {
+        const item = await Item.findOne({barCode: req.body.itemSearch})
+        console.log(item)
+        if ( !item ) throw new Error()
+        req.body.search = item
+        next()
+    }
+    
+    catch (error) {
+       console.log(error) 
+       res.status(404).send('Item not found')
     }
 }
 
 module.exports = {
+    itemSearch,
     createItem,
     loadAllItems
 }

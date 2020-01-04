@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row mx-auto">
+        {{>_search}}
+        <a href="/po"></a><button class="btn btn-outline-success py-2 ml-4">Back</button>
+    </div>
+</div>
+
+{{# each itemList }}
+<div class="container text-center pt-2 mt-5 m-auto" style="max-width:500px;">
+    <div class="card">
+        <a href="#">
+            <h2 class="mb-0">
+                {{barCode}}
+            </h2>
+
+            <div class="card-body">
+                <div class="container-sm mb-3">
+                    <div class="col">{{quantity}}</div>
+                    <div class="row mb-3">
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    </a>
+</div>
+</div>
+{{/each}}
