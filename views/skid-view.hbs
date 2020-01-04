@@ -1,3 +1,10 @@
+<div class="container.fluid sticky-top">
+    <div class="row">
+            <a class="col-xl-1" href="/po"><button class="btn btn-secondary col-xl-3">Back</button></a>
+            <a class="col-xl-1" href="/items/add/{{poId}}"><button class="btn btn-success col-xl-3">New</button></a>
+    </div>
+</div>
+
 {{#each skidList}}
 <div class="container text-center pt-2 mt-5 m-auto" style="max-width:500px; max-height: 800px;">
     <div class="card">
@@ -23,9 +30,3 @@
     </div>
 </div>
 {{/each}}
-<div class="row">
-    <nav class="card-content mb-3 fixed-bottom ">
-        <a href="/po"><button class="btn btn-outline-secondary col-sm-12" style="height: 5rem;">Back</button></a>
-        <a href="/items/add/{{poId}}"><button class="btn btn-outline-success col-sm-12" style="height: 5rem;">Commit</button></a>
-    </nav>
-</div>

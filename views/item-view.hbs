@@ -1,3 +1,11 @@
+<div class="container.fluid sticky-top">
+    <div class="row">
+            <a class="col-xl-1" href="/skids/{{poId}}/view"><button class="btn btn-secondary col-xl-3">Back</button></a>
+            <a class="col-xl-1" href="/items/add/{{poId}}"><button class="btn btn-success col-xl-3">New</button></a>
+    </div>
+</div>
+
+
 {{# each itemList }}
 <div class="container text-center pt-2 mt-5 m-auto" style="max-width:500px;">
     <div class="card">
@@ -19,11 +27,3 @@
 </div>
 </div>
 {{/each}}
-
-
-<div class="row">
-    <nav class="card-content mb-3 position-absolute" style="width: 3rem;">
-        <a href="/skids/{{poId}}/view"><button class="btn btn-outline-secondary" style="height: 5rem;">Back</button></a>
-        <a href="/items/add/{{poId}}"><button class="btn btn-outline-success " style="height: 5rem;">New</button></a>
-    </nav>
-</div>
